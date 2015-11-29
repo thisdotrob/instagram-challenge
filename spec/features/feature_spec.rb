@@ -81,6 +81,14 @@ feature 'feed' do
           expect(page).to have_content(comment_1)
         end
       end
+
+      context 'adding likes' do
+        scenario 'add like' do
+          visit '/'
+          click_link 'Like'
+          expect(page).to have_content "1 like"
+        end
+      end
     end
 
   end
